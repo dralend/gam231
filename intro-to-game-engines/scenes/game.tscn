@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cuy300rxnikkl" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://dl6ppo2sv6o48" path="res://scenes/slime.tscn" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://b06o6o8w8xnr1" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://c7a4wdwb4nc8j" path="res://scenes/small_platform.tscn" id="8_vtaks"]
 [ext_resource type="PackedScene" uid="uid://2refmlsg0tig" path="res://scenes/bouncy_mushroom.tscn" id="9_0tnpc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
@@ -477,8 +478,11 @@ position = Vector2(1137, 117)
 libraries/ = SubResource("AnimationLibrary_gee14")
 autoplay = &"move"
 
-[node name="slime" parent="." unique_id=1925429359 instance=ExtResource("6_p57ef")]
-position = Vector2(504, 34)
+[node name="small platform" parent="platforms" unique_id=128513715 instance=ExtResource("8_vtaks")]
+position = Vector2(1424, 62)
+
+[node name="small platform2" parent="platforms" unique_id=1431433248 instance=ExtResource("8_vtaks")]
+position = Vector2(1475, 12)
 
 [node name="label" type="Node" parent="." unique_id=1402000083]
 
@@ -531,3 +535,11 @@ this end!
 
 [node name="bouncy mushroom" parent="." unique_id=1361942045 instance=ExtResource("9_0tnpc")]
 position = Vector2(424, 121)
+
+[node name="slime" type="Node" parent="." unique_id=1490164018]
+
+[node name="slime" parent="slime" unique_id=1925429359 instance=ExtResource("6_p57ef")]
+position = Vector2(504, 34)
+
+[node name="slime2" parent="slime" unique_id=458374339 instance=ExtResource("6_p57ef")]
+position = Vector2(345, -173)
