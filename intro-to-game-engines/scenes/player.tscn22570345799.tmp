@@ -3,56 +3,77 @@
 [ext_resource type="Texture2D" uid="uid://c07ytpr17yhsp" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_3vyb7"]
 
 [sub_resource type="GDScript" id="GDScript_3vyb7"]
-script/source = "extends CharacterBody2D
+script/source = "class_name health
+extends Node
+
+signal max_health_changed(diff: int)
+signal health_changed(diff: int)
+signal health_depleted
 
 
-const SPEED = 120.0
-const JUMP_VELOCITY = -300.0
+@export var max_health: int = 3 : set = set_max_health, get = get_max_health
+@export var immortality: bool = false : set = set_immortality, get = get_immortality
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+var immortality_timmer: Timer = null
 
-var double_jump: bool = false
+@onready var health: int = max_health : set = set_health, get = get_health
 
-func _physics_process(delta: float) -> void:
-	if is_on_floor() and double_jump == true:
-		double_jump = false
-	if not is_on_floor():
-		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed(\"jump\"):
-		if is_on_floor():
-			jump()
-		elif double_jump == false:
-			double_jump = true
-			jump()
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(\"move_left\", \"move_right\")
+func set_max_health(value: int):
+	var clamped_value = 1 if value <= 0 else value
 	
-	if direction > 0:
-		animated_sprite.flip_h = false
-	elif direction < 0:
-		animated_sprite.flip_h = true
-	
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play(\"idle\")
-		else :
-			animated_sprite.play(\"run\")
-	else:
-		animated_sprite.play(\"jump\")
-	
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if not clamped_value == max_health: 
+		var difference = clamped_value - max_health
+		max_health = value
+		max_health_changed.emit(difference)
+		
+		if health > max_health:
+			health = max_health
 
-	move_and_slide()
+
+func get_max_health() -> int:
+	return max_health
+
+
+func set_immortality(value: bool):
+	immortality = value
+
+func get_immortality() -> bool:
+	return immortality
+
+
+func set_temporary_immortality(time: float):
+	if immortality_timmer == null:
+		immortality_timmer = Timer.new()
+		immortality_timmer.one_shot = true
+		add_child(immortality_timmer)
 	
-func jump(multi : float = 1):
-		velocity.y = JUMP_VELOCITY * multi
+	if  immortality_timmer.timeout.is_connected(set_immortality):
+		immortality_timmer.timeout.disconnect(set_immortality)
+	
+	immortality_timmer. set_wait_time(time)
+	immortality_timmer.timeout.connect(set_immortality.bind(false))
+	immortality = true
+	immortality_timmer.start()
+	
+
+func set_health(value: int):
+	if value < health and immortality:
+		return
+	
+	var clamped_value = clampi(value, 0, max_health)
+	
+	if clamped_value != health:
+		var difference = clamped_value - health
+		health = value
+		health_changed.emit(difference)
+		
+		if health == 0:
+			health_depleted.emit()
+
+
+func get_health():
+	return
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
