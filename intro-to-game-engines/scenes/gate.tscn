@@ -141,7 +141,6 @@ shape = SubResource("RectangleShape2D_3efw5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1179720229]
 sprite_frames = SubResource("SpriteFrames_hgsmm")
 animation = &"open"
-autoplay = "opening"
-frame_progress = 0.071840666
+frame_progress = 0.2714027
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
