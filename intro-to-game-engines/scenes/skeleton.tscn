@@ -55,12 +55,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrus2"]
-size = Vector2(15, 14)
+size = Vector2(11, 14)
 
 [node name="skeleton" type="Node2D" unique_id=2062887499]
 script = ExtResource("1_ivqcw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=409985425]
+position = Vector2(3, -6)
 sprite_frames = SubResource("SpriteFrames_i0f3v")
 animation = &"idle"
 autoplay = "idle"
@@ -68,13 +69,12 @@ autoplay = "idle"
 [node name="killzone" parent="." unique_id=981721468 instance=ExtResource("3_5pgwy")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1941419700]
-position = Vector2(-2, 6)
 shape = SubResource("RectangleShape2D_xrus2")
 
 [node name="RayCastright" type="RayCast2D" parent="." unique_id=426831210]
-position = Vector2(0, 5)
+position = Vector2(2, 0)
 target_position = Vector2(6, 0)
 
 [node name="RayCastleft" type="RayCast2D" parent="." unique_id=406221814]
-position = Vector2(0, 5)
+position = Vector2(-1, 0)
 target_position = Vector2(-7, 0)
