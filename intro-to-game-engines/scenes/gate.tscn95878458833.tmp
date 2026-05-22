@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://sbvqs8yu7ihx" path="res://scripts/gate.gd" id="1_xwxio"]
 [ext_resource type="Texture2D" uid="uid://7rsipf3yy4ps" path="res://assets/brackeys_platformer_assets/sprites/PortalGate_02.png" id="2_xwxio"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwxio"]
+size = Vector2(106, 47)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_hudsw"]
 atlas = ExtResource("2_xwxio")
 region = Rect2(0, 0, 32, 48)
@@ -178,31 +181,32 @@ animations = [{
 }, {
 "duration": 0.7,
 "texture": SubResource("AtlasTexture_h5b8s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jqs2g")
 }],
 "loop": false,
 "name": &"opening",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi8tm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3efw5"]
 size = Vector2(32, 48)
 
 [node name="gate" type="Area2D" unique_id=109234789]
 collision_mask = 2
 script = ExtResource("1_xwxio")
 
+[node name="range" type="CollisionShape2D" parent="." unique_id=1546790325]
+position = Vector2(-37, -0.5)
+shape = SubResource("RectangleShape2D_xwxio")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1179720229]
 sprite_frames = SubResource("SpriteFrames_hgsmm")
-animation = &"open"
-autoplay = "open"
-frame_progress = 0.14453991
+animation = &"opening"
+frame = 7
+frame_progress = 1.0
 
-[node name="next" type="CollisionShape2D" parent="." unique_id=1346273231]
-shape = SubResource("RectangleShape2D_wi8tm")
+[node name="stuff" type="CollisionShape2D" parent="." unique_id=1192030579]
+shape = SubResource("RectangleShape2D_3efw5")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="child_entered_tree" from="stuff" to="." method="_on_stuff_child_entered_tree"]
