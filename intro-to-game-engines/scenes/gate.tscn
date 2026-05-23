@@ -188,7 +188,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi8tm"]
-size = Vector2(32, 48)
+size = Vector2(145, 49)
 
 [node name="gate" type="Area2D" unique_id=109234789]
 collision_mask = 2
@@ -198,8 +198,11 @@ script = ExtResource("1_xwxio")
 sprite_frames = SubResource("SpriteFrames_hgsmm")
 animation = &"open"
 autoplay = "open"
+frame_progress = 0.33872935
 
-[node name="next" type="CollisionShape2D" parent="." unique_id=1346273231]
+[node name="tag" type="CollisionShape2D" parent="." unique_id=1346273231]
+position = Vector2(57.5, 0)
 shape = SubResource("RectangleShape2D_wi8tm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

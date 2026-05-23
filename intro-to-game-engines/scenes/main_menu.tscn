@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://bse6lvobnft0r"]
 
 [ext_resource type="Script" uid="uid://d10cfaj07u3ui" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://dwwe58jiiv5it" path="res://assets/KightHumanWallPaper.png" id="2_ekxnf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
+texture = ExtResource("2_ekxnf")
 
 [node name="main menu" type="Node2D" unique_id=1105781708]
 script = ExtResource("1_l6cm7")
+
+[node name="Panel" type="Panel" parent="." unique_id=1065041198]
+offset_right = 1153.0
+offset_bottom = 655.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_bqqt6")
 
 [node name="button_manager" type="Control" parent="." unique_id=2065583497]
 layout_mode = 3
@@ -11,36 +20,28 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="start" type="Button" parent="button_manager" unique_id=506569240]
-custom_minimum_size = Vector2(100, 10)
+[node name="VBoxContainer" type="VBoxContainer" parent="button_manager" unique_id=1163036167]
 layout_mode = 0
-offset_left = 509.0
-offset_top = 214.0
-offset_right = 776.0
-offset_bottom = 281.0
-theme_override_font_sizes/font_size = 18
-text = "start"
+offset_left = 307.0
+offset_top = 206.0
+offset_right = 777.0
+offset_bottom = 316.0
 
-[node name="options" type="Button" parent="button_manager" unique_id=37209718]
-custom_minimum_size = Vector2(100, 10)
-layout_mode = 0
-offset_left = 510.0
-offset_top = 288.0
-offset_right = 774.0
-offset_bottom = 355.0
-theme_override_font_sizes/font_size = 18
-text = "options"
+[node name="start" type="Button" parent="button_manager/VBoxContainer" unique_id=506569240]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "START"
 
-[node name="quit" type="Button" parent="button_manager" unique_id=2095132369]
-custom_minimum_size = Vector2(100, 10)
-layout_mode = 0
-offset_left = 509.0
-offset_top = 368.0
-offset_right = 774.0
-offset_bottom = 433.0
-theme_override_font_sizes/font_size = 18
-text = "quit"
+[node name="options" type="Button" parent="button_manager/VBoxContainer" unique_id=37209718]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "OPTIONS"
 
-[connection signal="pressed" from="button_manager/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="button_manager/options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="button_manager/quit" to="." method="_on_quit_pressed"]
+[node name="quit" type="Button" parent="button_manager/VBoxContainer" unique_id=2095132369]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "QUIT"
+
+[connection signal="pressed" from="button_manager/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="button_manager/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="button_manager/VBoxContainer/quit" to="." method="_on_quit_pressed"]

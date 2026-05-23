@@ -1,16 +1,28 @@
 [gd_scene format=3 uid="uid://cj226u8e5k1ep"]
 
-[ext_resource type="Texture2D" uid="uid://b5pfrqtnkhlqj" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_ba0x2"]
+[ext_resource type="Texture2D" uid="uid://b4txcvth3os3d" path="res://assets/tileset.png" id="1_8qif8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
-size = Vector2(30, 8)
+size = Vector2(80, 16)
 
 [node name="large green platform" type="AnimatableBody2D" unique_id=946057919]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=813915626]
-texture = ExtResource("1_ba0x2")
+texture = ExtResource("1_8qif8")
 region_enabled = true
-region_rect = Rect2(17, 0, 30, 9)
+region_rect = Rect2(240, 224, 80, 16)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1783707512]
+position = Vector2(-16, 0)
+texture = ExtResource("1_8qif8")
+region_enabled = true
+region_rect = Rect2(272, 224, 16, 16)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1601386824]
+position = Vector2(16, 0)
+texture = ExtResource("1_8qif8")
+region_enabled = true
+region_rect = Rect2(272, 224, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1044118178]
 shape = SubResource("RectangleShape2D_nlgqw")
