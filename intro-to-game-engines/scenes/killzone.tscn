@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cuy300rxnikkl"]
 
 [ext_resource type="Script" uid="uid://crgyqidqiis60" path="res://scripts/killzone.gd" id="1_xlapc"]
+[ext_resource type="PackedScene" uid="uid://dxphvr5q68om1" path="res://scenes/character/death.tscn" id="2_kl8fp"]
 
 [node name="killzone" type="Area2D" unique_id=981721468]
 collision_mask = 2
@@ -9,6 +10,8 @@ script = ExtResource("1_xlapc")
 [node name="Timer" type="Timer" parent="." unique_id=847995701]
 wait_time = 0.6
 one_shot = true
+
+[node name="death" parent="." unique_id=249236016 instance=ExtResource("2_kl8fp")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

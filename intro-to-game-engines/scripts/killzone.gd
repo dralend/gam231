@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var timer: Timer = $Timer
 
+
 func _on_body_entered(body):
 	print("you have died!")
 	Engine.time_scale = 0.5
