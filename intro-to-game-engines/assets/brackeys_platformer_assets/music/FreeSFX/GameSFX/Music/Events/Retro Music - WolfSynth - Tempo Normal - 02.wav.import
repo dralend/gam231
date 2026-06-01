@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqdkmasxv1n0w"
+path="res://.godot/imported/Retro Music - WolfSynth - Tempo Normal - 02.wav-abfadd92a57676269e3c530a26f57bba.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/FreeSFX/GameSFX/Music/Events/Retro Music - WolfSynth - Tempo Normal - 02.wav"
+dest_files=["res://.godot/imported/Retro Music - WolfSynth - Tempo Normal - 02.wav-abfadd92a57676269e3c530a26f57bba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

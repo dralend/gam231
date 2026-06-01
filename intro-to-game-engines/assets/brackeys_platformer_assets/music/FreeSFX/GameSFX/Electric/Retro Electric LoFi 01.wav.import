@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8r6knuq5pr0r"
+path="res://.godot/imported/Retro Electric LoFi 01.wav-7d6676a60a8c7d027647c4c84dfd3cf9.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/FreeSFX/GameSFX/Electric/Retro Electric LoFi 01.wav"
+dest_files=["res://.godot/imported/Retro Electric LoFi 01.wav-7d6676a60a8c7d027647c4c84dfd3cf9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

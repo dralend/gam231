@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dkbrjx3nokc0r"]
+
+[ext_resource type="Script" uid="uid://basfwjbwnqo8w" path="res://scripts/levelexit.gd" id="1_28tr2"]
+[ext_resource type="Texture2D" uid="uid://7rsipf3yy4ps" path="res://assets/brackeys_platformer_assets/sprites/PortalGate_02.png" id="2_dokv7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i1wi"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6kf2"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6mqk"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrjgw"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1d6s"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcurp"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7l4x"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(192, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msv8f"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(224, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0w3xn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i1wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6kf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6mqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrjgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1d6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcurp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7l4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msv8f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ncw4"]
+size = Vector2(32, 48)
+
+[node name="levelexit" type="Area2D" unique_id=1573498324]
+collision_mask = 3
+script = ExtResource("1_28tr2")
+transition_type = "fade"
+next_scene = "res://scenes/level/level_2.tscn"
+duration = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=133306105]
+sprite_frames = SubResource("SpriteFrames_0w3xn")
+autoplay = "default"
+frame_progress = 0.40826118
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=220865554]
+shape = SubResource("RectangleShape2D_1ncw4")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bd4hgsmg5txox"]
+
+[ext_resource type="Script" uid="uid://c5rq84yd43u78" path="res://addons/scripts/death_particles_component.gd" id="1_b1ajt"]
+
+[node name="DeathParticlesComponent" type="Node2D" unique_id=124369628]
+script = ExtResource("1_b1ajt")

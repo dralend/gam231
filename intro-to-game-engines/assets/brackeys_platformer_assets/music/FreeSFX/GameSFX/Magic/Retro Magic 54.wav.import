@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c543qqmjjgh5q"
+path="res://.godot/imported/Retro Magic 54.wav-dc6b51b0765d5d60e226d408519f2314.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/FreeSFX/GameSFX/Magic/Retro Magic 54.wav"
+dest_files=["res://.godot/imported/Retro Magic 54.wav-dc6b51b0765d5d60e226d408519f2314.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

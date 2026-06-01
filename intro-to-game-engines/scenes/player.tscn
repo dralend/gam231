@@ -464,21 +464,23 @@ radius = 6.0
 size = Vector2(18, 13.5)
 
 [node name="player" type="CharacterBody2D" unique_id=1813910512]
-z_index = 10
-collision_layer = 2
+z_index = 1
+collision_layer = 6
+collision_mask = 7
 script = SubResource("GDScript_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1128835325]
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"dead"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.88531756
+frame_progress = 0.56306124
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491061245]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_fjrip")
 
 [node name="hitbox" type="Area2D" parent="." unique_id=726989937]
+visible = false
 
 [node name="attack" type="CollisionShape2D" parent="hitbox" unique_id=1619763917]
 position = Vector2(9, 2.25)

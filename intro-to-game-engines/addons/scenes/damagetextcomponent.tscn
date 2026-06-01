@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cyiewjpaaw6v5"]
+
+[ext_resource type="Script" uid="uid://bwvjbdapbianh" path="res://addons/scripts/damage_text_component.gd" id="1_ecrib"]
+
+[node name="DamageTextComponent" type="Node2D" unique_id=1956612818]
+script = ExtResource("1_ecrib")

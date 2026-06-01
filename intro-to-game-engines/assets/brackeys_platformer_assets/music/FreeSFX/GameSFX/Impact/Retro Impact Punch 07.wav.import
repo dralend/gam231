@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cl8a6a5fmptee"
+path="res://.godot/imported/Retro Impact Punch 07.wav-411f2d142e835e622077ccf4fe7e9255.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/FreeSFX/GameSFX/Impact/Retro Impact Punch 07.wav"
+dest_files=["res://.godot/imported/Retro Impact Punch 07.wav-411f2d142e835e622077ccf4fe7e9255.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

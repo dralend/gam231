@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cqu7ynwgla6tj"]
+
+[ext_resource type="Script" uid="uid://dx0nsp08bblr3" path="res://addons/scripts/DamageNumber.gd" id="1_h1aqw"]
+
+[node name="DamageNumber" type="Node2D" unique_id=603932935]
+script = ExtResource("1_h1aqw")

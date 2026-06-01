@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ce2aragbjpdtn"
+path="res://.godot/imported/Retro Roar LoFi 08.wav-3ca2ea7d49aba016fda07351cb42bd50.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/FreeSFX/GameSFX/Roar/Retro Roar LoFi 08.wav"
+dest_files=["res://.godot/imported/Retro Roar LoFi 08.wav-3ca2ea7d49aba016fda07351cb42bd50.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

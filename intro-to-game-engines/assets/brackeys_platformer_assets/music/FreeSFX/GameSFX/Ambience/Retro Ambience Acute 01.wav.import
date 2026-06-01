@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3hxex5os6tmm"
+path="res://.godot/imported/Retro Ambience Acute 01.wav-f6804657a69413c2c8bcdd1946a32cbe.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/FreeSFX/GameSFX/Ambience/Retro Ambience Acute 01.wav"
+dest_files=["res://.godot/imported/Retro Ambience Acute 01.wav-f6804657a69413c2c8bcdd1946a32cbe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

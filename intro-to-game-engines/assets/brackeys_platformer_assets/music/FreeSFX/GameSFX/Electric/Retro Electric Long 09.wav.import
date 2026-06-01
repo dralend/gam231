@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://di22qf015nl4v"
+path="res://.godot/imported/Retro Electric Long 09.wav-573988fd37b39cb7fa9b2773d92e7277.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/FreeSFX/GameSFX/Electric/Retro Electric Long 09.wav"
+dest_files=["res://.godot/imported/Retro Electric Long 09.wav-573988fd37b39cb7fa9b2773d92e7277.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

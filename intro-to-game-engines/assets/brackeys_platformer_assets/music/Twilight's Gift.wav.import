@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpyx4qgxtjk1p"
+path="res://.godot/imported/Twilight's Gift.wav-01bfc1e00a84e5c1c4806efd91e59c16.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/Twilight's Gift.wav"
+dest_files=["res://.godot/imported/Twilight's Gift.wav-01bfc1e00a84e5c1c4806efd91e59c16.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

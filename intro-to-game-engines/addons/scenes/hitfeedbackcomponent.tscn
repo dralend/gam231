@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c1u0gr7mb3nmx"]
+
+[ext_resource type="Script" uid="uid://d3e1ojpj2wuro" path="res://addons/scripts/hit_feedback_component.gd" id="1_ydd2f"]
+
+[node name="hitfeedbackcomponent" type="Node" unique_id=519493299]
+script = ExtResource("1_ydd2f")

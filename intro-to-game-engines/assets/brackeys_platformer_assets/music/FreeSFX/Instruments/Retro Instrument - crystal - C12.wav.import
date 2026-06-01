@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vvynwvq2bbx3"
+path="res://.godot/imported/Retro Instrument - crystal - C12.wav-63bcaaf1b172a37e6edc1ae95a14ea56.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/FreeSFX/Instruments/Retro Instrument - crystal - C12.wav"
+dest_files=["res://.godot/imported/Retro Instrument - crystal - C12.wav-63bcaaf1b172a37e6edc1ae95a14ea56.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

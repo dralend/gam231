@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctxt5lawnv6gk"
+path="res://.godot/imported/Retro Weapon Laser 25.wav-3d15b5820b581b8dbfc02e564cd5f4ac.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/FreeSFX/GameSFX/Weapon/laser/Retro Weapon Laser 25.wav"
+dest_files=["res://.godot/imported/Retro Weapon Laser 25.wav-3d15b5820b581b8dbfc02e564cd5f4ac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

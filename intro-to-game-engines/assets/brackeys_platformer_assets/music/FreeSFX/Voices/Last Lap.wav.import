@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4algrx182m05"
+path="res://.godot/imported/Last Lap.wav-6b687e8e1b3c5ff048c212368b597e01.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/FreeSFX/Voices/Last Lap.wav"
+dest_files=["res://.godot/imported/Last Lap.wav-6b687e8e1b3c5ff048c212368b597e01.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

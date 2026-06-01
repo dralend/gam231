@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://7h4wh5f55qmf"]
+
+[ext_resource type="Script" uid="uid://biy4puxk0xm2g" path="res://scripts/ui/overworld_music_manager.gd" id="1_o66ug"]
+[ext_resource type="AudioStream" uid="uid://cxp2nkoushlu" path="res://assets/brackeys_platformer_assets/music/Fogbound Shrine.wav" id="2_go6lm"]
+[ext_resource type="AudioStream" uid="uid://ufypmdf5vso8" path="res://assets/brackeys_platformer_assets/music/Twilight Ruins.wav" id="3_xfsqc"]
+[ext_resource type="AudioStream" uid="uid://0dh1e13pgone" path="res://assets/brackeys_platformer_assets/music/Twilight Shrine Road.wav" id="4_vkt0a"]
+[ext_resource type="AudioStream" uid="uid://cpyx4qgxtjk1p" path="res://assets/brackeys_platformer_assets/music/Twilight's Gift.wav" id="5_5d17m"]
+
+[node name="OverworldMusicManager" type="Node" unique_id=321705567]
+script = ExtResource("1_o66ug")
+playlist = Array[AudioStream]([ExtResource("2_go6lm"), ExtResource("3_xfsqc"), ExtResource("4_vkt0a"), ExtResource("5_5d17m")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1340687998]
+stream = ExtResource("3_xfsqc")
+bus = &"Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=515086197]
+stream = ExtResource("2_go6lm")
+bus = &"Music"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=891737042]
+stream = ExtResource("4_vkt0a")
+bus = &"Music"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." unique_id=651878958]
+stream = ExtResource("5_5d17m")
+bus = &"Music"

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dl6ppo2sv6o48"]
 
 [ext_resource type="Script" uid="uid://bgi6x5lgnq6gx" path="res://scripts/slime.gd" id="1_pjw23"]
-[ext_resource type="PackedScene" uid="uid://cuy300rxnikkl" path="res://scenes/killzone.tscn" id="2_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://cvvp1678nte43" path="res://assets/brackeys_platformer_assets/sprites/Monster_Slime-Sheet.png" id="2_pjw23"]
+[ext_resource type="PackedScene" uid="uid://bqr6gbv3ms3be" path="res://scenes/ui/hurtarea.tscn" id="3_pjw23"]
+[ext_resource type="Script" uid="uid://bo6b51g6p6vqw" path="res://scripts/head.gd" id="4_2npkn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6pvg"]
 atlas = ExtResource("2_pjw23")
@@ -107,6 +108,22 @@ region = Rect2(768, 672, 96, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_klxi6"]
 atlas = ExtResource("2_pjw23")
 region = Rect2(864, 672, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfrqf"]
+atlas = ExtResource("2_pjw23")
+region = Rect2(0, 576, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhl3i"]
+atlas = ExtResource("2_pjw23")
+region = Rect2(96, 576, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qj7p"]
+atlas = ExtResource("2_pjw23")
+region = Rect2(192, 576, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf0ob"]
+atlas = ExtResource("2_pjw23")
+region = Rect2(288, 576, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2npkn"]
 atlas = ExtResource("2_pjw23")
@@ -261,6 +278,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_mfrqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhl3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qj7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf0ob")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2npkn")
 }, {
 "duration": 1.0,
@@ -312,31 +346,45 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6pvg"]
-size = Vector2(15.000006, 11.000004)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2gj0"]
+size = Vector2(19, 7)
 
-[node name="slime" type="Node2D" unique_id=1925429359]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjw23"]
+size = Vector2(10, 4)
+
+[node name="slime" type="Node2D" unique_id=1053973117]
+light_mask = 4
+visibility_layer = 4
 script = ExtResource("1_pjw23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=278146967]
+position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_v5wyi")
-animation = &"move"
-autoplay = "move"
-frame_progress = 0.20276435
+animation = &"attack"
+autoplay = "idle"
+frame_progress = 0.7505173
 
-[node name="killzone" parent="AnimatedSprite2D" unique_id=981721468 instance=ExtResource("2_n6pvg")]
+[node name="hurtarea" parent="." unique_id=1645481660 instance=ExtResource("3_pjw23")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/killzone" unique_id=1850519078]
-position = Vector2(-0.5, 3.4999998)
-scale = Vector2(0.99999964, 0.9999995)
-shape = SubResource("RectangleShape2D_n6pvg")
+[node name="damage" type="CollisionShape2D" parent="hurtarea" unique_id=103910216]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_p2gj0")
 
-[node name="RayCastRight" type="RayCast2D" parent="." unique_id=2145749568]
-position = Vector2(-0.5, 1.2500019)
-scale = Vector2(0.9583333, 1.7916666)
-target_position = Vector2(8, -1)
+[node name="goombahead" type="Area2D" parent="." unique_id=157021693]
+collision_mask = 3
+script = ExtResource("4_2npkn")
 
-[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=595817668]
-position = Vector2(-0.5, 1.2500019)
-scale = Vector2(0.9583333, 1.7916666)
-target_position = Vector2(-8, -1)
+[node name="killed" type="CollisionShape2D" parent="goombahead" unique_id=2086720865]
+visibility_layer = 2
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_pjw23")
+
+[node name="RayCastright" type="RayCast2D" parent="." unique_id=1569135753]
+position = Vector2(0, 5)
+target_position = Vector2(11, 0)
+
+[node name="RayCastleft" type="RayCast2D" parent="." unique_id=1817158089]
+position = Vector2(0, 5)
+target_position = Vector2(-13, 0)
+
+[connection signal="body_entered" from="goombahead" to="goombahead" method="_on_body_entered"]

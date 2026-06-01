@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bcry7y0kl85h2"
+path="res://.godot/imported/Retro Instrument - drumset - C10.wav-b9299d35874c72f557506f6c3b4f135d.sample"
+
+[deps]
+
+source_file="res://assets/brackeys_platformer_assets/music/FreeSFX/Instruments/Retro Instrument - drumset - C10.wav"
+dest_files=["res://.godot/imported/Retro Instrument - drumset - C10.wav-b9299d35874c72f557506f6c3b4f135d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
