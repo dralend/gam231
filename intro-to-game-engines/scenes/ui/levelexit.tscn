@@ -71,7 +71,7 @@ animations = [{
 size = Vector2(32, 48)
 
 [node name="levelexit" type="Area2D" unique_id=1573498324]
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_28tr2")
 transition_type = "fade"
 next_scene = "res://scenes/level/level_2.tscn"

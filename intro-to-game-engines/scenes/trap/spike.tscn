@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://crvkgx4s40nuv"]
 
+[ext_resource type="Script" uid="uid://0oarrls6fcb2" path="res://scenes/trap/spike.gd" id="1_apqxq"]
 [ext_resource type="Texture2D" uid="uid://drtp4seckll6n" path="res://assets/traps/spike_0.png" id="1_au2yf"]
 [ext_resource type="Texture2D" uid="uid://b6d0th1ctggqm" path="res://assets/traps/spike_1.png" id="2_eiooq"]
 [ext_resource type="Texture2D" uid="uid://crk6kw4r14igx" path="res://assets/traps/spike_2.png" id="3_apqxq"]
 [ext_resource type="Texture2D" uid="uid://bfjssoqqk5o78" path="res://assets/traps/spike_3.png" id="4_3b3pk"]
 [ext_resource type="Texture2D" uid="uid://c8k43pfr6gx0f" path="res://assets/traps/spike_4.png" id="5_63r7v"]
+[ext_resource type="PackedScene" uid="uid://cuy300rxnikkl" path="res://scenes/killzone.tscn" id="6_eiooq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_enfgl"]
 atlas = ExtResource("1_au2yf")
@@ -53,14 +55,18 @@ animations = [{
 size = Vector2(18, 13)
 
 [node name="spike" type="Node2D" unique_id=1179504757]
+script = ExtResource("1_apqxq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1566296224]
 sprite_frames = SubResource("SpriteFrames_m5klv")
 animation = &"spike_trap"
+autoplay = "spike_trap"
 frame_progress = 0.13130401
 
-[node name="Area2D" type="Area2D" parent="." unique_id=232171029]
+[node name="killzone" parent="." unique_id=981721468 instance=ExtResource("6_eiooq")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=391956759]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=391956759]
 position = Vector2(1, -6.5)
 shape = SubResource("RectangleShape2D_au2yf")
+
+[connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]

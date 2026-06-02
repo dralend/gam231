@@ -1,8 +1,10 @@
-class_name Enemys extends Node2D
+extends Node2D
+class_name Enemys 
 
 const SPEED = 60
 
 var direction = 1
+var is_dead := false
 
 
 @onready var ray_castright: RayCast2D = $RayCastright
@@ -14,6 +16,7 @@ var Current_Health: int
 
 func _ready() -> void:
 	Current_Health = Max_Health
+	add_to_group("enemy")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -31,4 +34,8 @@ func die() -> void:
 	queue_free()
 
 func take_damage(damage: int):
+	print("Enemy took", damage, "damage")
 	Current_Health -= damage
+
+	if Current_Health <= 0:
+		die()

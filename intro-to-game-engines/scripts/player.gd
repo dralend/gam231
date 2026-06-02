@@ -1,4 +1,5 @@
-class_name Player extends CharacterBody2D
+extends CharacterBody2D
+class_name Player 
 
 @export var SPEED: float = 200.0
 @export var JUMP_VELOCITY: float = -300.0
@@ -20,6 +21,7 @@ var can_wall_jump: bool = true
 
 func _ready() -> void:
 	Current_Health = Max_Health
+	add_to_group("Player")
 
 func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
@@ -99,4 +101,6 @@ func handle_air_dash() -> void:
 		animated_sprite.flip_h = true
 
 func take_damage(damage: int):
+	print("Player hit for", damage)
 	Current_Health -= damage
+	print("Health:", Current_Health)

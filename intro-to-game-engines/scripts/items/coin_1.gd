@@ -4,7 +4,6 @@ extends Area2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @export var value: int = 1
 
-func _on_body_entered(body):
-	print ("stuff")
+func _on_body_entered(_body):
 	game_manager.add_point(value)
 	animation_player.play("pickup")

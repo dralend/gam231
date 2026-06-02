@@ -347,14 +347,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2gj0"]
-size = Vector2(19, 7)
+size = Vector2(17, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjw23"]
 size = Vector2(10, 4)
 
 [node name="slime" type="Node2D" unique_id=1053973117]
-light_mask = 4
-visibility_layer = 4
+light_mask = 5
+visibility_layer = 6
 script = ExtResource("1_pjw23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=278146967]
@@ -367,7 +367,8 @@ frame_progress = 0.7505173
 [node name="hurtarea" parent="." unique_id=1645481660 instance=ExtResource("3_pjw23")]
 
 [node name="damage" type="CollisionShape2D" parent="hurtarea" unique_id=103910216]
-position = Vector2(-1, 5)
+visibility_layer = 7
+position = Vector2(-0.5, 5)
 shape = SubResource("RectangleShape2D_p2gj0")
 
 [node name="goombahead" type="Area2D" parent="." unique_id=157021693]

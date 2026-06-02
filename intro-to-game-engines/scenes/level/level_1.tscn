@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cspfckprns0ao" path="res://scenes/items/5_coin.tscn" id="11_vigbq"]
 [ext_resource type="Script" uid="uid://km07sstfwcv" path="res://scripts/ui/game_manager.gd" id="12_ewor0"]
 [ext_resource type="PackedScene" uid="uid://sdfecf7cwopf" path="res://scenes/items/10_coin.tscn" id="12_g6sy5"]
-[ext_resource type="PackedScene" uid="uid://blc8571ayv5gr" path="res://scenes/player.tscn" id="12_mferh"]
+[ext_resource type="PackedScene" uid="uid://blc8571ayv5gr" path="res://scenes/character/player.tscn" id="12_mferh"]
 [ext_resource type="PackedScene" uid="uid://ddy0b578l2fix" path="res://scenes/fadearea.tscn" id="13_ga837"]
 [ext_resource type="PackedScene" uid="uid://cuy300rxnikkl" path="res://scenes/killzone.tscn" id="13_j1614"]
 [ext_resource type="PackedScene" uid="uid://bhho74a2tbwxw" path="res://scenes/items/20_coin.tscn" id="13_m3417"]
@@ -1223,6 +1223,7 @@ offset_right = 75.0
 offset_bottom = 35.0
 theme_override_fonts/font = ExtResource("17_ox3e1")
 theme_override_font_sizes/font_size = 21
+text = "0"
 
 [node name="sky" type="TileMapLayer" parent="." unique_id=617662225]
 position = Vector2(-17, 208)
@@ -1275,8 +1276,7 @@ scale = Vector2(10.319995, 3.5600004)
 
 [node name="player" parent="." unique_id=1813910512 instance=ExtResource("12_mferh")]
 position = Vector2(78, 134)
-collision_layer = 2
-collision_mask = 1
+collision_mask = 5
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=314678571]
 position = Vector2(0, -6)
@@ -1286,7 +1286,6 @@ limit_top = -502
 limit_right = 2103
 limit_bottom = 868
 limit_smoothed = true
-position_smoothing_enabled = true
 
 [node name="killzone" parent="." unique_id=981721468 instance=ExtResource("13_j1614")]
 position = Vector2(245, 878)
@@ -1658,6 +1657,21 @@ theme_override_fonts/font = ExtResource("17_ox3e1")
 theme_override_font_sizes/font_size = 8
 text = "Spaceor W to Jump 
 wasd or  arrow keys to move"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="label" unique_id=1141678723]
+anchors_preset = -1
+anchor_top = -0.06111111
+anchor_right = 0.12666667
+anchor_bottom = -0.06111111
+offset_left = 76.0
+offset_top = 700.0
+offset_right = 77.0
+offset_bottom = 774.0
+theme_override_fonts/font = ExtResource("17_ox3e1")
+theme_override_font_sizes/font_size = 8
+text = "Press enter to go to next level"
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="slime" type="Node" parent="." unique_id=1490164018]
