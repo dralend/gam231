@@ -5,9 +5,8 @@ class_name Hurtbox
 
 func _on_body_entered(body: Node2D):
 	print("Entered by:", body.name)
-	if body.is_in_group("Player"):
-		print("Player detected")
-		body.take_damage(damage)
-		#if body.is_in_group("Player"):
-		#print(damage)
-		#body.take_damage(damage)
+	print("Player detected")
+	print(damage)
+	body.take_damage(damage)
+	
+	

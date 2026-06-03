@@ -13,6 +13,7 @@ class_name Player
 
 @export var Max_Health: int = 6
 var Current_Health: int
+var dying: bool = false
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_air_dash: bool = false
@@ -104,3 +105,15 @@ func take_damage(damage: int):
 	print("Player hit for", damage)
 	Current_Health -= damage
 	print("Health:", Current_Health)
+	if Current_Health <= 0:
+		die()
+	else:
+		Engine.time_scale = .3 * damage
+		var tween = get_tree().create_tween()
+		tween.set_ignore_time_scale(true)
+		tween.tween_property(Engine, "time_scale", 1.0, 0.3)
+
+func die():
+	if !dying:
+		dying = true
+		Engine.time_scale = 0.3
