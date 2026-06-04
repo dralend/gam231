@@ -2,4 +2,5 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	body.jump(2)
+	if body.has_method("jump"):
+		body.jump(2)

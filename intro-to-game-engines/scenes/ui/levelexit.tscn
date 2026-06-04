@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkbrjx3nokc0r"]
 
-[ext_resource type="Script" uid="uid://basfwjbwnqo8w" path="res://scripts/levelexit.gd" id="1_28tr2"]
+[ext_resource type="Script" uid="uid://basfwjbwnqo8w" path="res://scripts/ui/levelexit.gd" id="1_28tr2"]
 [ext_resource type="Texture2D" uid="uid://7rsipf3yy4ps" path="res://assets/brackeys_platformer_assets/sprites/PortalGate_02.png" id="2_dokv7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0i1wi"]

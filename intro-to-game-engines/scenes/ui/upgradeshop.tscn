@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bn4kkdtt5nnoy"]
+
+[ext_resource type="Script" uid="uid://b8xsi674huc7k" path="res://scripts/ui/upgradeshop.gd" id="1_7vy2r"]
+
+[node name="upgradeshop" type="Control" unique_id=702261112]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7vy2r")
+
+[node name="Panel" type="Panel" parent="." unique_id=30170326]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="healthbutton" type="Button" parent="." unique_id=728771614]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="damagebutton" type="Button" parent="." unique_id=50739411]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="speedbutton" type="Button" parent="." unique_id=1372125667]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="dashbutton" type="Button" parent="." unique_id=1503658860]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="jumpbutton" type="Button" parent="." unique_id=27844018]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="coins" type="ColorRect" parent="." unique_id=2079320058]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="coin amount" type="Label" parent="coins" unique_id=969723454]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

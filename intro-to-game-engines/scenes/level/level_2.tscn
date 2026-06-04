@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://sdfecf7cwopf" path="res://scenes/items/10_coin.tscn" id="12_18aur"]
 [ext_resource type="PackedScene" uid="uid://dl6ppo2sv6o48" path="res://scenes/slime.tscn" id="12_a0lbm"]
 [ext_resource type="PackedScene" uid="uid://crvkgx4s40nuv" path="res://scenes/trap/spike.tscn" id="12_hve35"]
-[ext_resource type="PackedScene" uid="uid://blc8571ayv5gr" path="res://scenes/character/player.tscn" id="12_iwi3c"]
+[ext_resource type="PackedScene" uid="uid://wyibulxfvcng" path="res://scenes/character/player.tscn" id="12_iwi3c"]
 [ext_resource type="PackedScene" uid="uid://dkbrjx3nokc0r" path="res://scenes/ui/levelexit.tscn" id="13_hve35"]
 [ext_resource type="PackedScene" uid="uid://cuy300rxnikkl" path="res://scenes/killzone.tscn" id="13_nmsrh"]
 [ext_resource type="PackedScene" uid="uid://cspfckprns0ao" path="res://scenes/items/5_coin.tscn" id="13_sjad2"]
@@ -23133,17 +23133,16 @@ tile_map_data = PackedByteArray("AAADAC8ABQAHAAUAAAAGAC8ABQAHAAUAAAAJAC8ABQAHAAU
 tile_set = SubResource("TileSet_72p4d")
 
 [node name="player" parent="." unique_id=1813910512 instance=ExtResource("12_iwi3c")]
-position = Vector2(-169, 724)
+position = Vector2(-172, 727)
 collision_mask = 7
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=314678571]
-position = Vector2(0, -6)
+position = Vector2(3, -9)
 zoom = Vector2(4, 4)
 limit_left = -350
 limit_top = -426
 limit_right = 485
 limit_bottom = 920
-limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="killzone" parent="." unique_id=981721468 instance=ExtResource("13_nmsrh")]

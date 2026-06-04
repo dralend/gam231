@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dl6ppo2sv6o48"]
 
-[ext_resource type="Script" uid="uid://bgi6x5lgnq6gx" path="res://scripts/slime.gd" id="1_pjw23"]
-[ext_resource type="Texture2D" uid="uid://cvvp1678nte43" path="res://assets/brackeys_platformer_assets/sprites/Monster_Slime-Sheet.png" id="2_pjw23"]
-[ext_resource type="PackedScene" uid="uid://bqr6gbv3ms3be" path="res://scenes/ui/hurtarea.tscn" id="3_pjw23"]
-[ext_resource type="Script" uid="uid://bo6b51g6p6vqw" path="res://scripts/head.gd" id="4_2npkn"]
+[ext_resource type="Script" uid="uid://bgi6x5lgnq6gx" path="res://scripts/enemys/slime.gd" id="1_pjw23"]
+[ext_resource type="Texture2D" uid="uid://cvvp1678nte43" path="res://assets/enemys/Monster_Slime-Sheet.png" id="2_pjw23"]
+[ext_resource type="PackedScene" uid="uid://bqr6gbv3ms3be" path="res://scenes/ui/hurtbox.tscn" id="3_pjw23"]
+[ext_resource type="Script" uid="uid://bo6b51g6p6vqw" path="res://scripts/ui/head.gd" id="4_2npkn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6pvg"]
 atlas = ExtResource("2_pjw23")
