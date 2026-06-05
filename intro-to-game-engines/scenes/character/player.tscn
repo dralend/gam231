@@ -451,7 +451,8 @@ size = Vector2(9.5, 10)
 
 [node name="player" type="CharacterBody2D" unique_id=1813910512]
 z_index = 1
-collision_layer = 2
+collision_layer = 10
+collision_mask = 5
 script = ExtResource("1_bnvp8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1128835325]
@@ -471,7 +472,7 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_bnvp8")
 
 [node name="hitbox_light" parent="." unique_id=1525788665 instance=ExtResource("3_0vjlc")]
-collision_layer = 4
+collision_layer = 8
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox_light" unique_id=198670874]
@@ -483,3 +484,5 @@ shape = SubResource("RectangleShape2D_0vjlc")
 [node name="Dash_timer" type="Timer" parent="." unique_id=1075899627]
 
 [node name="Death_timer" type="Timer" parent="." unique_id=731579069]
+
+[connection signal="body_entered" from="hitbox_light" to="hitbox_light" method="_on_body_entered"]

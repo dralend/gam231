@@ -8,7 +8,7 @@ var state = State.IDLE
 @export var JUMP_FORCE = -300.0
 @export var DASH_SPEED = 500.0
 @export var WALL_JUMP_SPEED = 300.0
-@export var MAX_HEALTH = 6
+@export var MAX_HEALTH = 12
 @export var base_damage: int = 1
 
 
@@ -40,7 +40,7 @@ func _ready():
 	DASH_SPEED += PlayerData.dash_bonus
 	total_damage = base_damage + PlayerData.attack_power
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
-
+	add_to_group("player")
 
 func _physics_process(delta) -> void:
 	if not is_on_floor():
@@ -55,10 +55,6 @@ func _physics_process(delta) -> void:
 	light_attack()
 	heavy_attack()
 	block()
-
-	if knockback_velocity.length() > 0:
-		velocity += knockback_velocity
-		knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, 800 * delta)
 	update_animation()
 	move_and_slide()
 
@@ -145,14 +141,10 @@ func take_damage(damage: int, hit_position: Vector2, knockback_force: float):
 		return
 	if blocking:
 		damage = int(ceil(damage * 0.5))
-		knockback_force *= 0.25
 	print("PLAYER TOOK DAMAGE")
 	current_health -= damage
 	animated_sprite_2d.play("hit")
 	state = State.HIT
-	var direction = (global_position - hit_position).normalized()
-	direction.y = -0.4
-	knockback_velocity = (direction.normalized() * knockback_force)
 	start_Invincibility_timer()
 
 	if current_health <= 0:
@@ -183,7 +175,7 @@ func die():
 
 
 func _on_death_timeout():
-	queue_free()
+	get_tree().reload_current_scene()
 
 
 func update_animation():
