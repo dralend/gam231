@@ -30,11 +30,17 @@ func _process(delta):
 	position.x += direction * SPEED * delta
 
 func die() -> void:
+	if is_dead:
+		return
+	is_dead = true
 	animated_sprite_2d.play("dead")
+	await animated_sprite_2d.animation_finished
 	queue_free()
 
 func take_damage(damage: int):
+	if is_dead:
+		return
+	print("ENEMY HIT")
 	Current_Health -= damage
-
 	if Current_Health <= 0:
 		die()

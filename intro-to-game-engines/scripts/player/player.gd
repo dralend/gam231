@@ -8,10 +8,11 @@ var state = State.IDLE
 @export var JUMP_FORCE = -300.0
 @export var DASH_SPEED = 500.0
 @export var WALL_JUMP_SPEED = 300.0
-
 @export var MAX_HEALTH = 6
+@export var base_damage: int = 1
 
-var total_damage = base_damage + PlayerData.attack_power
+
+var total_damage: int
 var current_health: int
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_double_jump = true
@@ -24,7 +25,6 @@ var knockback_velocity = Vector2.ZERO
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox_light: Hitbox = $hitbox_light
-@onready var hitbox_heavy: Hitbox = $hitbox_heavy
 @onready var invincibility_timer: Timer = $Invincibility_timer
 @onready var dash_timer: Timer = $Dash_timer
 @onready var death_timer: Timer = $Death_timer
@@ -32,18 +32,22 @@ var knockback_velocity = Vector2.ZERO
 
 func _ready():
 	hitbox_light.monitoring = false
-	hitbox_heavy.monitoring = false
 	invincibility_timer.timeout.connect(_on_invincibility_timeout)
 	dash_timer.timeout.connect(_on_dash_timeout)
 	death_timer.timeout.connect(_on_death_timeout)
 	current_health = PlayerData.max_health
 	SPEED += PlayerData.speed_bonus
 	DASH_SPEED += PlayerData.dash_bonus
+	total_damage = base_damage + PlayerData.attack_power
+	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	if is_on_floor():
+		can_double_jump = true
+		can_air_dash = true
 	handle_movement(delta)
 	jump()
 	handle_wall_jump()
@@ -61,17 +65,18 @@ func _physics_process(delta):
 
 func handle_movement(delta):
 	var direction = Input.get_axis( "move_left", "move_right")
-	if direction:
-		velocity.x = move_toward( velocity.x, direction * SPEED, 800 * delta)
+	if direction != 0:
+		velocity.x = move_toward(velocity.x, direction * SPEED, 800 * delta)
+
+		# flip sprite
+		animated_sprite_2d.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, 1100 * delta)
 
-
-func jump():
+func jump(force = JUMP_FORCE):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = JUMP_FORCE
-			can_double_jump = true
 			can_air_dash = true
 		elif can_double_jump:
 			can_double_jump = false
@@ -113,19 +118,26 @@ func light_attack():
 		hitbox_light.monitoring = false
 
 
+func _on_animation_finished():
+	if animated_sprite_2d.animation == "attack_light":
+		state = State.IDLE
+
+
 func heavy_attack():
 	if Input.is_action_just_pressed("heavy_attack"):
 		state = State.ATTACK
 		animated_sprite_2d.play("attack_heavy")
-		hitbox_heavy.monitoring = true
+		hitbox_light.monitoring = true
 		await get_tree().create_timer(0.25).timeout
-		hitbox_heavy.monitoring = false
+		hitbox_light.monitoring = false
 
 
 func block():
 	blocking = Input.is_action_pressed("block")
 	if blocking:
 		state = State.BLOCK
+	elif state == State.BLOCK:
+		state = State.IDLE
 
 
 func take_damage(damage: int, hit_position: Vector2, knockback_force: float):
@@ -134,6 +146,7 @@ func take_damage(damage: int, hit_position: Vector2, knockback_force: float):
 	if blocking:
 		damage = int(ceil(damage * 0.5))
 		knockback_force *= 0.25
+	print("PLAYER TOOK DAMAGE")
 	current_health -= damage
 	animated_sprite_2d.play("hit")
 	state = State.HIT
@@ -155,6 +168,8 @@ func start_Invincibility_timer():
 func _on_invincibility_timeout():
 	invincible = false
 	animated_sprite_2d.modulate.a = 1.0
+	if state == State.HIT:
+		state = State.IDLE
 
 
 func die():

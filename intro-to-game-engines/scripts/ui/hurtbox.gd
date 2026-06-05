@@ -1,10 +1,13 @@
 extends Area2D
 class_name Hurtbox
 
-func _ready() -> void:
+@export var parent: Node  # enemy or player that owns this hurtbox
+
+func _ready():
 	area_entered.connect(_on_area_entered)
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is Hitbox:
-		if owner.has_method("take_damage"):
-			owner.take_damage(area.damage, area.global_position, area.knockback_force)
+		var hitbox := area as Hitbox
+		if parent and parent.has_method("take_damage"):
+			parent.take_damage(hitbox.damage, area.global_position, hitbox.knockback_force)
