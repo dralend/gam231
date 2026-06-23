@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://d2yxu25lmlek5" path="res://assets/player/Human_Soldier_Sword_Shield-Sheet.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://ci3264kre7ere" path="res://scripts/player/player.gd" id="1_bnvp8"]
-[ext_resource type="PackedScene" uid="uid://bqr6gbv3ms3be" path="res://scenes/ui/hurtbox.tscn" id="2_tum32"]
 [ext_resource type="PackedScene" uid="uid://36uhn2hjfos5" path="res://scenes/ui/hitbox.tscn" id="3_0vjlc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
@@ -443,16 +442,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
 radius = 6.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnvp8"]
-size = Vector2(13, 18)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vjlc"]
 size = Vector2(9.5, 10)
 
 [node name="player" type="CharacterBody2D" unique_id=1813910512]
 z_index = 1
-collision_layer = 10
-collision_mask = 5
+collision_layer = 2
 script = ExtResource("1_bnvp8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1128835325]
@@ -464,16 +459,7 @@ autoplay = "idle"
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_fjrip")
 
-[node name="hurtbox" parent="." unique_id=1645481660 instance=ExtResource("2_tum32")]
-collision_layer = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=2050609118]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_bnvp8")
-
 [node name="hitbox_light" parent="." unique_id=1525788665 instance=ExtResource("3_0vjlc")]
-collision_layer = 8
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox_light" unique_id=198670874]
 position = Vector2(12.25, -2)
@@ -484,5 +470,3 @@ shape = SubResource("RectangleShape2D_0vjlc")
 [node name="Dash_timer" type="Timer" parent="." unique_id=1075899627]
 
 [node name="Death_timer" type="Timer" parent="." unique_id=731579069]
-
-[connection signal="body_entered" from="hitbox_light" to="hitbox_light" method="_on_body_entered"]

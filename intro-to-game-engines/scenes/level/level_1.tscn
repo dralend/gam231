@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://blcidvoy42l6f"]
 
+[ext_resource type="PackedScene" uid="uid://d2g8ivcdibnm0" path="res://scenes/ui/menus/pause_menu.tscn" id="1_0alxl"]
 [ext_resource type="Texture2D" uid="uid://dh2nbiyhbqonx" path="res://assets/pickups/coin_1.png" id="2_lkxmd"]
 [ext_resource type="Texture2D" uid="uid://bpisxcf6wuxoe" path="res://assets/tiles/back.png" id="4_q27gu"]
 [ext_resource type="PackedScene" uid="uid://6ccb2r518j8b" path="res://scenes/items/1_coin.tscn" id="11_jyww5"]
@@ -1078,6 +1079,10 @@ _data = {
 
 [node name="level 1" type="Node2D" unique_id=2104300450]
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1721889118]
+
+[node name="pause_menu" parent="CanvasLayer2" unique_id=1406708683 instance=ExtResource("1_0alxl")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=827142108]
 
 [node name="game_manager" type="Control" parent="CanvasLayer" unique_id=1688052873]
@@ -1161,20 +1166,6 @@ position = Vector2(245, 878)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1410865600]
 position = Vector2(0, 657)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
-
-[node name="player" parent="." unique_id=1813910512 instance=ExtResource("12_mferh")]
-position = Vector2(73, 134)
-collision_layer = 7
-collision_mask = 7
-
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=314678571]
-position = Vector2(0, 3)
-zoom = Vector2(4, 4)
-limit_left = 23
-limit_top = -502
-limit_right = 2111
-limit_bottom = 868
-limit_smoothed = true
 
 [node name="coins" type="Node" parent="." unique_id=1673741973]
 
@@ -1494,6 +1485,66 @@ position = Vector2(319, 295)
 [node name="50_coin3" parent="coins" unique_id=304673465 instance=ExtResource("14_0alxl")]
 position = Vector2(2104, -163)
 
+[node name="10_coin3" parent="coins" unique_id=1420662211 instance=ExtResource("12_g6sy5")]
+position = Vector2(856, 290)
+
+[node name="1_coin45" parent="coins" unique_id=1247250946 instance=ExtResource("11_jyww5")]
+position = Vector2(871, 290)
+
+[node name="1_coin58" parent="coins" unique_id=1694137497 instance=ExtResource("11_jyww5")]
+position = Vector2(886, 290)
+
+[node name="1_coin59" parent="coins" unique_id=778929716 instance=ExtResource("11_jyww5")]
+position = Vector2(901, 290)
+
+[node name="1_coin63" parent="coins" unique_id=312044253 instance=ExtResource("11_jyww5")]
+position = Vector2(916, 290)
+
+[node name="1_coin65" parent="coins" unique_id=628508043 instance=ExtResource("11_jyww5")]
+position = Vector2(930, 290)
+
+[node name="1_coin67" parent="coins" unique_id=1939549059 instance=ExtResource("11_jyww5")]
+position = Vector2(947, 290)
+
+[node name="1_coin70" parent="coins" unique_id=2088721837 instance=ExtResource("11_jyww5")]
+position = Vector2(963, 290)
+
+[node name="1_coin73" parent="coins" unique_id=410453622 instance=ExtResource("11_jyww5")]
+position = Vector2(980, 290)
+
+[node name="1_coin74" parent="coins" unique_id=1030592363 instance=ExtResource("11_jyww5")]
+position = Vector2(996, 290)
+
+[node name="1_coin75" parent="coins" unique_id=501458163 instance=ExtResource("11_jyww5")]
+position = Vector2(1011, 290)
+
+[node name="1_coin76" parent="coins" unique_id=778628746 instance=ExtResource("11_jyww5")]
+position = Vector2(1026, 290)
+
+[node name="1_coin77" parent="coins" unique_id=2050619281 instance=ExtResource("11_jyww5")]
+position = Vector2(1042, 290)
+
+[node name="1_coin78" parent="coins" unique_id=1784383239 instance=ExtResource("11_jyww5")]
+position = Vector2(1058, 290)
+
+[node name="1_coin79" parent="coins" unique_id=73164259 instance=ExtResource("11_jyww5")]
+position = Vector2(1074, 290)
+
+[node name="1_coin80" parent="coins" unique_id=564866745 instance=ExtResource("11_jyww5")]
+position = Vector2(1091, 290)
+
+[node name="50_coin4" parent="coins" unique_id=650318023 instance=ExtResource("14_0alxl")]
+position = Vector2(220, 755)
+
+[node name="1_coin81" parent="coins" unique_id=921899877 instance=ExtResource("11_jyww5")]
+position = Vector2(205, 755)
+
+[node name="1_coin82" parent="coins" unique_id=112415721 instance=ExtResource("11_jyww5")]
+position = Vector2(205, 735)
+
+[node name="1_coin83" parent="coins" unique_id=405331481 instance=ExtResource("11_jyww5")]
+position = Vector2(220, 734)
+
 [node name="platforms" type="Node" parent="." unique_id=150683489]
 
 [node name="large green platform" parent="platforms" unique_id=946057919 instance=ExtResource("15_odw4r")]
@@ -1528,17 +1579,36 @@ collision_mask = 2
 libraries/ = SubResource("AnimationLibrary_13hc6")
 autoplay = &"new_animation"
 
+[node name="player" parent="platforms" unique_id=1813910512 instance=ExtResource("12_mferh")]
+position = Vector2(79, 134)
+collision_layer = 7
+
+[node name="Camera2D" type="Camera2D" parent="platforms/player" unique_id=314678571]
+position = Vector2(0, 3)
+zoom = Vector2(4, 4)
+limit_left = 23
+limit_top = -502
+limit_right = 2111
+limit_bottom = 868
+limit_smoothed = true
+
 [node name="label" type="Node" parent="." unique_id=1402000083]
 
 [node name="Label" type="Label" parent="label" unique_id=924319645]
+anchors_preset = -1
+anchor_top = -0.033333335
+anchor_bottom = 0.030555556
 offset_left = 56.0
 offset_top = 88.0
 offset_right = 250.0
 offset_bottom = 107.0
 theme_override_fonts/font = ExtResource("17_ox3e1")
 theme_override_font_sizes/font_size = 8
-text = "Spaceor W to Jump 
-wasd or  arrow keys to move"
+text = "Space or W to Jump 
+wasd or  arrow keys to move
+R to dash on ground
+F to attack "
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="label" unique_id=1141678723]
@@ -1559,37 +1629,40 @@ metadata/_edit_use_anchors_ = true
 [node name="slime" type="Node" parent="." unique_id=1490164018]
 
 [node name="slime" parent="slime" unique_id=1156245462 instance=ExtResource("16_0wlyu")]
-position = Vector2(731, 39)
+position = Vector2(731, 40)
 
 [node name="slime4" parent="slime" unique_id=1053973117 instance=ExtResource("16_0wlyu")]
-position = Vector2(683, 150)
+position = Vector2(683, 152)
 
 [node name="slime5" parent="slime" unique_id=1701253534 instance=ExtResource("16_0wlyu")]
-position = Vector2(1051, 166)
+position = Vector2(1051, 168)
 
 [node name="slime6" parent="slime" unique_id=1963817045 instance=ExtResource("16_0wlyu")]
-position = Vector2(1227, 119)
+position = Vector2(1227, 120)
 
 [node name="slime7" parent="slime" unique_id=922065782 instance=ExtResource("16_0wlyu")]
-position = Vector2(1258, 325)
+position = Vector2(1258, 328)
+
+[node name="slime12" parent="slime" unique_id=1184005488 instance=ExtResource("16_0wlyu")]
+position = Vector2(1723, 520)
 
 [node name="slime8" parent="slime" unique_id=1298277632 instance=ExtResource("16_0wlyu")]
-position = Vector2(1046, 439)
+position = Vector2(1046, 440)
 
 [node name="slime9" parent="slime" unique_id=718051137 instance=ExtResource("16_0wlyu")]
-position = Vector2(311, 646)
+position = Vector2(311, 648)
 
 [node name="slime11" parent="slime" unique_id=704033056 instance=ExtResource("16_0wlyu")]
-position = Vector2(1113, 791)
+position = Vector2(1113, 792)
 
 [node name="slime10" parent="slime" unique_id=995411373 instance=ExtResource("16_0wlyu")]
-position = Vector2(327, 486)
+position = Vector2(327, 488)
 
 [node name="slime2" parent="slime" unique_id=2100877717 instance=ExtResource("16_0wlyu")]
-position = Vector2(699, -121)
+position = Vector2(699, -120)
 
 [node name="slime3" parent="slime" unique_id=808479240 instance=ExtResource("16_0wlyu")]
-position = Vector2(613, -170)
+position = Vector2(613, -168)
 
 [node name="bouncy mushroom" type="Node" parent="." unique_id=214724327]
 

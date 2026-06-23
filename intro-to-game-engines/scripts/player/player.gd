@@ -40,7 +40,7 @@ func _ready():
 	DASH_SPEED += PlayerData.dash_bonus
 	total_damage = base_damage + PlayerData.attack_power
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
-	add_to_group("player")
+	add_to_group("Player")
 
 func _physics_process(delta) -> void:
 	if not is_on_floor():
@@ -69,7 +69,7 @@ func handle_movement(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, 1100 * delta)
 
-func jump(force = JUMP_FORCE):
+func jump():
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = JUMP_FORCE
@@ -77,6 +77,10 @@ func jump(force = JUMP_FORCE):
 		elif can_double_jump:
 			can_double_jump = false
 			velocity.y = JUMP_FORCE
+
+
+func bounce(force: float):
+	velocity.y = force
 
 
 func handle_wall_jump():
@@ -107,6 +111,7 @@ func _on_dash_timeout():
 
 func light_attack():
 	if Input.is_action_just_pressed("attack"):
+		print("ATTACK")
 		state = State.ATTACK
 		animated_sprite_2d.play("attack_light")
 		hitbox_light.monitoring = true
@@ -136,7 +141,7 @@ func block():
 		state = State.IDLE
 
 
-func take_damage(damage: int, hit_position: Vector2, knockback_force: float):
+func take_damage(damage: int, attacker_position := Vector2.ZERO):
 	if invincible:
 		return
 	if blocking:

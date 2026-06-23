@@ -35,6 +35,38 @@ region = Rect2(192, 0, 32, 48)
 atlas = ExtResource("2_dokv7")
 region = Rect2(224, 0, 32, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_28tr2"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dokv7"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0w3xn"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(64, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ncw4"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(96, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3g2t"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(128, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vxy2"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(160, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbmw7"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(192, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efrp7"]
+atlas = ExtResource("2_dokv7")
+region = Rect2(224, 48, 32, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0w3xn"]
 animations = [{
 "frames": [{
@@ -65,6 +97,35 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28tr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dokv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0w3xn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ncw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3g2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vxy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbmw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efrp7")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ncw4"]
@@ -80,7 +141,7 @@ duration = 1.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=133306105]
 sprite_frames = SubResource("SpriteFrames_0w3xn")
 autoplay = "default"
-frame_progress = 0.40826118
+frame_progress = 0.019891964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=220865554]
 shape = SubResource("RectangleShape2D_1ncw4")

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bgi6x5lgnq6gx" path="res://scripts/enemys/slime.gd" id="1_pjw23"]
 [ext_resource type="Texture2D" uid="uid://cvvp1678nte43" path="res://assets/enemys/Monster_Slime-Sheet.png" id="2_pjw23"]
-[ext_resource type="PackedScene" uid="uid://36uhn2hjfos5" path="res://scenes/ui/hitbox.tscn" id="3_pjw23"]
 [ext_resource type="Script" uid="uid://bo6b51g6p6vqw" path="res://scripts/ui/head.gd" id="4_2npkn"]
+[ext_resource type="PackedScene" uid="uid://bqr6gbv3ms3be" path="res://scenes/ui/hurtbox.tscn" id="4_pjw23"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6pvg"]
 atlas = ExtResource("2_pjw23")
@@ -347,19 +347,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2npkn"]
-size = Vector2(13, 9)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2gj0"]
-size = Vector2(17, 6.5)
+size = Vector2(15, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjw23"]
 size = Vector2(10, 4)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fd6lc"]
+size = Vector2(15, 7)
+
 [node name="slime" type="CharacterBody2D" unique_id=1184005488]
 light_mask = 5
 visibility_layer = 6
-collision_layer = 16
-collision_mask = 3
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_pjw23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=278146967]
@@ -369,17 +369,8 @@ animation = &"attack_shoot"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1843361796]
-position = Vector2(-0.5, 3.5)
+position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_2npkn")
-
-[node name="hitbox" parent="." unique_id=1525788665 instance=ExtResource("3_pjw23")]
-collision_layer = 4
-collision_mask = 8
-
-[node name="damage" type="CollisionShape2D" parent="hitbox" unique_id=103910216]
-visibility_layer = 7
-position = Vector2(-0.5, 4.75)
-shape = SubResource("RectangleShape2D_p2gj0")
 
 [node name="goombahead" type="Area2D" parent="." unique_id=157021693]
 collision_layer = 4
@@ -392,5 +383,11 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_pjw23")
 
 [node name="AttackCooldown" type="Timer" parent="." unique_id=2069768908]
+
+[node name="hurtbox" parent="." unique_id=1645481660 instance=ExtResource("4_pjw23")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=2116806729]
+position = Vector2(-0.5, 4.5)
+shape = SubResource("RectangleShape2D_fd6lc")
 
 [connection signal="body_entered" from="goombahead" to="goombahead" method="_on_body_entered"]

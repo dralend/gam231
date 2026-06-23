@@ -15,7 +15,6 @@ var player: Player = null
 var is_dead := false
 var can_attack := true
 
-@onready var hitbox: Hitbox = $hitbox
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_cooldown: Timer = $AttackCooldown
 
@@ -24,7 +23,7 @@ func _ready():
 	add_to_group("enemy")
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	attack_cooldown.timeout.connect(_on_attack_cooldown_timeout)
-	hitbox.monitoring = false
+
 
 func _physics_process(_delta):
 	if is_dead:
@@ -43,7 +42,7 @@ func _physics_process(_delta):
 
 func find_player():
 	if player == null:
-		player = get_tree().get_first_node_in_group("player")
+		player = get_tree().get_first_node_in_group("Player")
 
 
 func idle_state():
@@ -82,20 +81,21 @@ func attack_state():
 		can_attack = false
 		animated_sprite.play("attack")
 		await get_tree().create_timer(0.2).timeout
-		hitbox.monitoring = true
 		await get_tree().create_timer(0.15).timeout
-		hitbox.monitoring = false
 		attack_cooldown.start()
 
 func take_damage(damage: int, _hit_position: Vector2 = Vector2.ZERO, _knockback_force: float = 0.0):
+	print("SLIME HIT")
 	if is_dead:
 		return
+	print("SLIME TOOK DAMAGE")
 	current_health -= damage
 	print("Enemy HP:", current_health)
 	if current_health <= 0:
 		die()
 
 func die():
+	print("SLIME DIED")
 	if is_dead:
 		return
 	is_dead = true
