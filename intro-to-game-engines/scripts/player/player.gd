@@ -42,6 +42,7 @@ func _ready():
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
 	add_to_group("Player")
 
+
 func _physics_process(delta) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta

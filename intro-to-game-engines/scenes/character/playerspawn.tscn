@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c8fahh7brnk3k"]
+
+[ext_resource type="Script" uid="uid://ckvyof4aiy6vh" path="res://scripts/player/playerspawn.gd" id="1_abovw"]
+[ext_resource type="Texture2D" uid="uid://d2yxu25lmlek5" path="res://assets/player/Human_Soldier_Sword_Shield-Sheet.png" id="1_yj0k1"]
+
+[node name="playerspawn" type="Node2D" unique_id=162484313]
+script = ExtResource("1_abovw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=305539919]
+modulate = Color(0, 1.6381655, 0, 1)
+z_index = 100
+texture = ExtResource("1_yj0k1")
+hframes = 10
+vframes = 8

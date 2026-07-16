@@ -23693,9 +23693,10 @@ position = Vector2(1218, 304)
 
 [node name="levelexit" parent="gate" unique_id=1573498324 instance=ExtResource("13_rnty5")]
 position = Vector2(1936, 40)
+next_scene = "res://scenes/level/boss_level_1.tscn"
 
 [node name="player" parent="." unique_id=1813910512 instance=ExtResource("9_af0ln")]
-position = Vector2(16, 646)
+position = Vector2(10, 645)
 collision_mask = 7
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=314678571]

@@ -1579,19 +1579,6 @@ collision_mask = 2
 libraries/ = SubResource("AnimationLibrary_13hc6")
 autoplay = &"new_animation"
 
-[node name="player" parent="platforms" unique_id=1813910512 instance=ExtResource("12_mferh")]
-position = Vector2(79, 134)
-collision_layer = 7
-
-[node name="Camera2D" type="Camera2D" parent="platforms/player" unique_id=314678571]
-position = Vector2(0, 3)
-zoom = Vector2(4, 4)
-limit_left = 23
-limit_top = -502
-limit_right = 2111
-limit_bottom = 868
-limit_smoothed = true
-
 [node name="label" type="Node" parent="." unique_id=1402000083]
 
 [node name="Label" type="Label" parent="label" unique_id=924319645]
@@ -1689,3 +1676,15 @@ position = Vector2(2040, 840)
 [node name="levelexit" parent="gate" unique_id=1573498324 instance=ExtResource("15_0alxl")]
 visibility_layer = 2
 position = Vector2(81, 745)
+
+[node name="player" parent="." unique_id=1813910512 instance=ExtResource("12_mferh")]
+position = Vector2(79, 134)
+collision_layer = 7
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=314678571]
+zoom = Vector2(4, 4)
+limit_left = 22
+limit_top = -502
+limit_right = 2111
+limit_bottom = 868
+limit_smoothed = true

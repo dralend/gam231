@@ -452,8 +452,9 @@ script = ExtResource("1_bnvp8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1128835325]
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"attack_heavy"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.83285654
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491061245]
 position = Vector2(0, 4)
